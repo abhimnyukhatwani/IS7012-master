@@ -1,0 +1,34 @@
+﻿@page
+@model CountryProfileModel
+@{
+}
+
+
+<h1>Country Profile</h1>
+<h4 class="text-center text-success">Country : @Model.Country.Name</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Team Id</th>
+            <th>Team Name</th>
+            <th>Junior/Senior</th>
+            <th>Inter College Eligibility</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var team in Model.Country.Teams) {
+             <tr>
+                <td>@team.Id</td>
+                <td>@team.Name</td>
+                <td>@team.JuniorOrSenior</td>
+                @if(@team.JuniorOrSenior=="Senior") {
+                    <td>Yes</td>
+                } else {
+                    <td>No</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+

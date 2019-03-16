@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Dashboard</h1>
+
+
+<div class="row">
+    <div class="col-md-6">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2">Statistics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Number of Teams</td>
+                    <td class="text-right">@Model.numberOfTeams</td>
+                </tr>
+                <tr>
+                    <td>Representing Countries </td>
+                    <td class="text-right">@Model.numberOfCountries</td>
+                </tr>  
+                <tr>
+                    <td>Number of Senior Teams</td>
+                    <td class="text-right">@Model.numberOfSeniorTeams</td>
+                </tr>  
+                <tr>
+                    <td>High BudgetTeams</td>
+                    <td class="text-right">@Model.NumberOfHighBudgetTeams</td>
+                </tr>                                                                                                 
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Links</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a asp-page="Roster">Link to roster Code</a></li>
+                   
+                </ul>
+                <ul>
+                    <li><a asp-page="CountryProfile" asp-route-id="1">Country Profile (ID=1)</a></li>
+                    <li><a asp-page="CountryProfile" asp-route-id="6">Country Profile (ID=5)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,42 @@
+﻿@page
+@model RosterModel
+@{
+}
+
+
+<h1> Team Roster</h1>
+<br/>
+<br/>
+
+<h5><em>Teams with Revenues more than 400 classified as High Budget teams , those between 201-400 as Moderate
+       and others as low budget
+</em></h5>
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Team Name</th>
+            <th>Team Country</th>
+            <th>Budget Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var team in Model.Teams) {
+            <tr>
+                <td>@team.Id</td>
+                <td>@team.Name</td>
+                <td>@team.Country.Name</td>
+                @if(@team.TeamRevenue > 400) {
+                    <td>High</td>
+                }
+                else if(@team.TeamRevenue > 250) {
+                    <td>Moderate</td>
+                }
+                else {
+                    <td>Low</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
